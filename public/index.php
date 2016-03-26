@@ -13,6 +13,8 @@ ini_set('display_errors', 1);
 // Global constants
 define('VIEW_DIR', realpath(__DIR__ . '/../views'));
 
+
+
 /********************
 *	Initialization	*
 ********************/
@@ -20,11 +22,24 @@ define('VIEW_DIR', realpath(__DIR__ . '/../views'));
 // Handles the PHPSESSID cookie and populates the $_SESSION array with the user data
 session_start();
 
+
+
 /**************
 *	Routing   *
 **************/
 
 // Conversion of uri "/derp%40herp?id=1" to "/derp@herp" much prettier, yes?
-$uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))
+$uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
+// Controller for the pages
+
+switch ($uri) {
+	case '/':
+		require VIEW_DIR . '/pages/login.php';
+		break;
+	
+	default:
+		# code...
+		break;
+}
 
