@@ -1,12 +1,10 @@
 <?php require VIEW_DIR . '/header.php'; ?>
-<?php $title = 'Login';
-
-?>
+<?php $title = 'Login'; ?>
 
 <div class="loginHeader">
 	<h1>Login</h1>
 </div>
-<form method="POST" action="gallery.html">
+<form method="POST" action="gallery">
 	Username <br>
 		<input type="text" name="userID"/>
 		<br>

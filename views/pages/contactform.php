@@ -1,4 +1,17 @@
-s<?php
+		<!--	
+		***************************************
+		*								      *
+		* 		   Experimental Area 		  *
+		*			 (ignore code)			  *
+		*									  *
+		***************************************
+ 											-->
+
+
+<?php require VIEW_DIR . '/header.php'; ?>
+<?php $title = 'Login'; ?>
+
+<?php
 
 	if ($_POST["submit"]) {
 		
@@ -40,7 +53,6 @@ s<?php
 			<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<!-- Latest compiled and minified CSS -->
-			<link rel="stylesheet" type="text/css" href="styles/myCss.css"/>
 			<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 			<!-- Optional theme -->
 			<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
@@ -95,15 +107,14 @@ s<?php
 		</div>
 
 		<ul>
-		  <li><a href="gallery.html">Gallery</a></li>
-		  <li><a href="userList.html">Users</a></li>
-		  <li><a href="index.php">Home</a></li>
-		  <li><a href="upload.html">Upload Image</a></li>
+		  <li><a href="gallery">Gallery</a></li>
+		  <li><a href="userList">Users</a></li>
+		  <li><a href="/">Home</a></li>
+		  <li><a href="upload">Upload Image</a></li>
 		</ul>
 		<br>
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-	</body>
-</html>
+<?php require VIEW_DIR . '/footer.php'; ?>

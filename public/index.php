@@ -37,9 +37,22 @@ switch ($uri) {
 	case '/':
 		require VIEW_DIR . '/pages/login.php';
 		break;
-	
+	case '/upload':
+		require VIEW_DIR . '/pages/upload.php';
+		break;
+	case '/addUser':
+		require VIEW_DIR . '/pages/addUser.php';
+		break;
+	case '/contactform':
+		require VIEW_DIR . '/pages/contactform.php';
+		break;
+	case '/gallery':
+		require VIEW_DIR . '/pages/gallery.php';
+		break;
+	case '/userList':
+		require VIEW_DIR . '/pages/userList.php';
+		break;
 	default:
-		# code...
 		break;
 }
 
