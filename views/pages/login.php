@@ -1,5 +1,10 @@
 <?php require VIEW_DIR . '/header.php'; ?>
-<?php $title = 'Login'; ?>
+<?php $title = 'Login'; 
+	if (isset(var)) {
+		# code...
+	}
+
+?>
 
 <div class="loginHeader">
 	<h1>Login</h1>
