@@ -1,5 +1,5 @@
 <?php require VIEW_DIR . '/header.php'; ?>
-<?php $title = 'Login'; ?>
+<?php $title = 'Add User'; ?>
 
 <h1>Add User:</h1>
 <ul>
