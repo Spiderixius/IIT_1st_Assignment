@@ -9,7 +9,7 @@ $dbname = "MyGalleryDb";
 
 // Handle a bit of connection errors
 try {
-	$dbconnection = new PDO('mysql:host=' .$serverhost.';dbname=' .$dbname, $user, $pass);
+	$dbconnection = new PDO("mysql:host=$serverhost;dbname=$dbname",$user,$pass);
 } catch (PDOException $e) {
 	echo htmlentities($e);
 	die();
