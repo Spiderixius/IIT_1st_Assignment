@@ -44,9 +44,12 @@ $container = new Container();
 *	Routing   *
 **************/
 
+
 $router = new Router();
-$router->addRoute('GET', '/', ['App\\Controller\\LoginController', 'showLogin']);
-$router->addRoute('GET', '/', ['App\\Controller\\GalleryController', 'showGallery']);
+$router->addRoute('GET', '/', ['App\\Controller\\LoginController', 'login']);
+$router->addRoute('GET', '/login', ['App\\Controller\\LoginController', 'login']);
+$router->addRoute('POST', '/gallery', ['App\\Controller\\GalleryController', 'showGallery']);
+//$router->addRoute('POST', '/validate', ['App\\Controller\\ValidateLogin', 'validateLogin']);
 
 // Conversion of uri "/derp%40herp?id=1" to "/derp@herp" much prettier, yes?
 $uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
@@ -58,8 +61,9 @@ if ($route === null) {
         'arguments' => []
     ];
 }
+
 $controller = $container->create($route['handle'][0]);
-//$container->call([$controller, $route['handle'][1]], $route['arguments']);
+$container->call([$controller, $route['handle'][1]], $route['arguments']);
 
 // Controller for the pages
 

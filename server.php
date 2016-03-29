@@ -7,4 +7,4 @@ if (!preg_match('/\\.(html|php)$|^[^.]*$/', $_SERVER['REQUEST_URI'])) {
 } 
 
 // Where to find index
-require $_SERVER['DOCUMENT_ROOT']. '/public/index.php';
+require $_SERVER['DOCUMENT_ROOT']. '/index.php';
