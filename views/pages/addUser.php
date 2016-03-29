@@ -4,7 +4,7 @@
 <h1>Add User:</h1>
 <ul>
   <li><a href="gallery">Gallery</a></li>
-  <li><a href="userList">Users</a></li>
+  <li><a href="userlist">Users</a></li>
   <li><a href="/">Home</a></li>
   <li><a href="contactform">Contact Me</a></li>
 </ul>
@@ -12,6 +12,9 @@
 	Username <br>
 		<input type="text" name="userID"/>
 		<br>
+	Password<br>
+	<input type="text" password="userID"/>
+	<br>
 		<input type="submit" value="Add User"/> 
 		<input type="reset" value="Cancel"/>
 

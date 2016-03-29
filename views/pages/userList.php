@@ -5,11 +5,11 @@
 <br>
 <ul>
   <li><a href="gallery">Gallery</a></li>
-  <li><a href="userList">Users</a></li>
+  <li><a href="userlist">Users</a></li>
   <li><a href="/">Home</a></li>
   <li><a href="contactform">Contact Me</a></li>	
 </ul>
-<form method="POST" action="addUser">
+<form method="GET" action="adduser">
 	<input type="submit" value="Add a user"/>
 </form>
 <br>

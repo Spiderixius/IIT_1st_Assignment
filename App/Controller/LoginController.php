@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 class LoginController {
@@ -8,6 +9,7 @@ class LoginController {
 
 	public function login(){
 		$this->ShowLogin();
+		echo  "Hello World!";
 	}
 
 	public function showLogin(){

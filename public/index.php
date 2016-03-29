@@ -16,6 +16,7 @@ ini_set('display_errors', 1);
 
 // Global constants
 define('VIEW_DIR', realpath(__DIR__ . '/../views'));
+define('CONTROLLER_DIR', realpath(__DIR__ . '/../Controller'));
 
 
 
@@ -44,12 +45,22 @@ $container = new Container();
 *	Routing   *
 **************/
 
-
 $router = new Router();
 $router->addRoute('GET', '/', ['App\\Controller\\LoginController', 'login']);
 $router->addRoute('GET', '/login', ['App\\Controller\\LoginController', 'login']);
-$router->addRoute('POST', '/gallery', ['App\\Controller\\GalleryController', 'showGallery']);
-//$router->addRoute('POST', '/validate', ['App\\Controller\\ValidateLogin', 'validateLogin']);
+$router->addRoute('GET', '/gallery', ['App\\Controller\\GalleryController', 'showGallery']);
+$router->addRoute('GET', '/upload', ['App\\Controller\\UploadController', 'uploadImage']);
+$router->addRoute('GET', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
+$router->addRoute('GET', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
+$router->addRoute('GET', '/adduser', ['App\\Controller\\AddUserController', 'addUser']);
+
+$router->addRoute('POST', '/login', ['App\\Controller\\LoginController', 'login']);
+$router->addRoute('POST', '/gallery', ['App\\Controller\\LoginController', 'showGallery']);
+$router->addRoute('POST', '/upload', ['App\\Controller\\UploadController', 'uploadImage']);
+$router->addRoute('POST', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
+$router->addRoute('POST', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
+$router->addRoute('POST', '/adduser', ['App\\Controller\\AddUserController', 'addUser']);
+$router->addRoute('POST', '/validate', ['App\\Controller\\dbConnecterController', 'validate']);
 
 // Conversion of uri "/derp%40herp?id=1" to "/derp@herp" much prettier, yes?
 $uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
