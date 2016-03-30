@@ -1,5 +1,6 @@
 <?php
 namespace App\Controller;
+use PDO;
 
 class dbConnecterController {
 	public function __construct(){
@@ -12,8 +13,10 @@ class dbConnecterController {
 
 		$host = "localhost";
 		$user = "root";
-		$pass = "toor";
-		$dbname = "mygallerydb";
+		$pass = "";
+		//$pass = "toor";
+		$dbname = "MyGalleryDb";
+		//$dbname = "mygallerydb";
 
 
 		// Handle a bit of connection errors
@@ -26,13 +29,14 @@ class dbConnecterController {
 		} catch (PDOException $e) {
 			echo htmlentities($e);
 			die();
+			echo "FAIL!";
 		}
 
-
-		$result = $dbconnection->query("SELECT * FROM users WHERE username= $username && password= $password");
-		$result->setFetchMode(PDO::FETCH_ASSOC);
-		$row = $result->fetch();
-		echo $row[0];
+			$result = $dbconnection->query('SELECT * FROM users WHERE username="'.$username.'" && password ="'.$password.'";');
+			$result->setFetchMode(PDO::FETCH_ASSOC);
+			$row = $result->fetch();
+			echo $row[0];
+		
 		
 	}
 }
