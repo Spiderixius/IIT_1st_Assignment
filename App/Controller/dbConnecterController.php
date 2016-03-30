@@ -41,30 +41,5 @@ class dbConnecterController {
 	}
 }
 
-/*
-$host = "localhost";
-$user = "root";
-$pass = "toor";
-$dbname = "mygallerydb";
-
-
-// Handle a bit of connection errors
-try {
-	// Connect to server via PHP Data Object
-	$dbconnection = new PDO('mysql:host='.$host.';dbname=' . $dbname, $user, $pass);
-
-
-
-} catch (PDOException $e) {
-	echo htmlentities($e);
-	die();
-}
-
-
-$result = $dbconnection->query("SELECT * FROM users WHERE username='$' ")
-$result->setFetchMode(PDO::FETCH_ASSOC);
-
-*/
-
 ?>
 
