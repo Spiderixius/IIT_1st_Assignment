@@ -7,7 +7,6 @@ class dbConnecterController {
 	}
 
 	public  function validate(){
-
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
@@ -34,12 +33,28 @@ class dbConnecterController {
 
 			$result = $dbconnection->query('SELECT * FROM users WHERE username="'.$username.'" && password ="'.$password.'";');
 			$result->setFetchMode(PDO::FETCH_ASSOC);
-			$row = $result->fetch();
-			echo $row[0];
-		
-		
+			//$row = $result->fetch();
+
+			if ($username && $password) {
+				$row = $result->fetchColumn();
+				if($row != 0){
+					while ($info = $result->fetch(PDO::FETCH_ASSOC)) {
+						$usernameDb = $info['username'];
+						$passwordDb = $info['password'];
+
+						if ($username == $usernameDb && $password == $passwordDb) {
+							//header('Location: VIEW_DIR . /pages/login.php');
+							//header(sprintf('Location: %s/pages/gallery.php', VIEW_DIR));
+							require VIEW_DIR . '/pages/gallery.php';
+							$_SESSION['username'] = $usernameDb;
+						} else {
+							die("You messed up maaan... Check your username or password.");
+						}
+					} 
+				} else {
+					die("Username not in the DB, talk with the owner to add you!");
+				}
+			}
+		}
 	}
-}
-
 ?>
-
