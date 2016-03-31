@@ -1,4 +1,4 @@
-o<?php
+<?php
 namespace App\Controller;
 
 class UploadController {

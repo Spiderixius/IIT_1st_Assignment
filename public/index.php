@@ -16,7 +16,8 @@ ini_set('display_errors', 1);
 
 // Global constants
 define('VIEW_DIR', realpath(__DIR__ . '/../views'));
-define('CONTROLLER_DIR', realpath(__DIR__ . '/../Controller'));
+define('CONTROLLER_DIR', realpath(__DIR__ . '/../App/Controller'));
+define('MODEL_DIR', realpath(__DIR__ . '/../App/Model'));
 
 
 
@@ -60,7 +61,7 @@ $router->addRoute('POST', '/upload', ['App\\Controller\\UploadController', 'uplo
 $router->addRoute('POST', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
 $router->addRoute('POST', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
 $router->addRoute('POST', '/adduser', ['App\\Controller\\AddUserController', 'addUser']);
-$router->addRoute('POST', '/validate', ['App\\Controller\\dbConnecterController', 'validate']);
+$router->addRoute('POST', '/validate', ['App\\Model\\LoginModel', 'validate']);
 
 // Conversion of uri "/derp%40herp?id=1" to "/derp@herp" much prettier, yes?
 $uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
