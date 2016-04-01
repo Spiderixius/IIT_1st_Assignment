@@ -28,8 +28,32 @@ class AddUserModel {
 				return true;
 			} else {
 				die("Username already taken, pick something else! <br><a href='/userlist'> Go back to user list");
-			}
-			
+			}	
 		}
+	}
+
+
+	public function showUsers(){
+
+
+		require CONTROLLER_DIR . '/dbConnecterController.php';
+
+		$result = $db->query('SELECT id, username FROM users');
+
+		$row = $result->fetchColumn();
+		echo "<table border='1'>
+			<tr>
+			<th>ID</th>
+			<th>Username</th>
+			</tr>";
+
+		while($row = $result->fetch(PDO::FETCH_ASSOC)){
+ 			echo "<tr>";
+	        echo "<td>" . $row['id'] . "</td>";
+	        echo "<td>" . $row['username'] . "</td>";
+	        echo "</tr>";
+
+		}
+		echo '</table>';
 	}
 }

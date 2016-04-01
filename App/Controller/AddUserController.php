@@ -29,4 +29,5 @@ class AddUserController {
 			echo "<br><a href='/userlist'> Go back to user list";
 		}
 	}
+
 }

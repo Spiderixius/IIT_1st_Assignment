@@ -14,21 +14,10 @@
 </form>
 <br>
 <hr>
-<table>
-	<tr>
-		<th>User Name</th>
-		<th>Status</th>
-	</tr>
-	<tr>
-		<td>Jack Lee</td>
-		<td>Online</td>
-	</tr>
-	<tr>
-		<td>Hanna Jackson</td>
-	</tr>
-	<tr>
-		<td>Jens Jensen</td>
-	</tr>
-</table>
+<br>
+
+<form method="GET" action="/updateUserList">
+	<input type="button" value="Update"/> 
+</form>
 
 <?php require VIEW_DIR . '/footer.php'; ?>

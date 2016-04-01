@@ -53,6 +53,9 @@ $router->addRoute('GET', '/upload', ['App\\Controller\\UploadController', 'uploa
 $router->addRoute('GET', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
 $router->addRoute('GET', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
 $router->addRoute('GET', '/adduser', ['App\\Controller\\AddUserController', 'showAddUserPage']);
+$router->addRoute('GET', '/updateUserList', ['App\\Controller\\UserListController', 'updateUserList']);
+
+
 
 
 $router->addRoute('POST', '/login', ['App\\Controller\\LoginController', 'Login']);
@@ -78,30 +81,6 @@ if ($route === null) {
 $controller = $container->create($route['handle'][0]);
 $container->call([$controller, $route['handle'][1]], $route['arguments']);
 
-// Controller for the pages
 
-/*switch ($uri) {
-	case '/':
-		require VIEW_DIR . '/pages/login.php';
-		break;
-	case '/upload':
-		require VIEW_DIR . '/pages/upload.php';
-		break;
-	case '/addUser':
-		require VIEW_DIR . '/pages/addUser.php';
-		break;
-	case '/contactform':
-		require VIEW_DIR . '/pages/contactform.php';
-		break;
-	case '/gallery':
-		require VIEW_DIR . '/pages/gallery.php';
-		break;
-	case '/userList':
-		require VIEW_DIR . '/pages/userList.php';
-		break;
-	default:
-		break;
-}
-*/
 
 
