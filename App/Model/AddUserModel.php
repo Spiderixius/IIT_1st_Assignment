@@ -51,8 +51,8 @@ class AddUserModel {
  			echo "<tr>";
 	        echo "<td>" . $row['id'] . "</td>";
 	        echo "<td>" . $row['username'] . "</td>";
-	        echo "<td> EDIT (placeholder)</td>";
-	        echo "<td> DELETE (placeholder)</td>";
+	        echo '<td> <form method="POST" action="/">  <input type="submit" value="EDIT" name="editUser"/> </form></td>';
+	        echo '<td> <form method="POST" action="/">  <input type="submit" value="DELETE" name="deleteUser"/> </form></td>';
 	        echo "</tr>";
 
 		}
