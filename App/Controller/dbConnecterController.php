@@ -6,9 +6,9 @@ use PDO;
 $host = "localhost";
 $user = "root";
 $pass = "";
-//$pass = "toor";
-$dbname = "MyGalleryDb";
-//$dbname = "mygallerydb";
+$pass = "toor";
+//$dbname = "MyGalleryDb";
+$dbname = "mygallerydb";
 
 
 // Handle a bit of connection errors
