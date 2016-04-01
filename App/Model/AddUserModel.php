@@ -35,22 +35,24 @@ class AddUserModel {
 
 	public function showUsers(){
 
-
 		require CONTROLLER_DIR . '/dbConnecterController.php';
 
-		$result = $db->query('SELECT id, username FROM users');
+		$result = $db->query('SELECT id, username FROM users ORDER BY id');
 
-		$row = $result->fetchColumn();
 		echo "<table border='1'>
 			<tr>
 			<th>ID</th>
 			<th>Username</th>
+			<th></th>
+			<th></th>
 			</tr>";
 
 		while($row = $result->fetch(PDO::FETCH_ASSOC)){
  			echo "<tr>";
 	        echo "<td>" . $row['id'] . "</td>";
 	        echo "<td>" . $row['username'] . "</td>";
+	        echo "<td> EDIT (placeholder)</td>";
+	        echo "<td> DELETE (placeholder)</td>";
 	        echo "</tr>";
 
 		}

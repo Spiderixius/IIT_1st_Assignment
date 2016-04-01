@@ -16,8 +16,8 @@
 <hr>
 <br>
 
-<form method="GET" action="/updateUserList">
-	<input type="button" value="Update"/> 
+<form method="GET" action="/userlist">
+	<input type="submit" value="Update"/> 
 </form>
 
 <?php require VIEW_DIR . '/footer.php'; ?>

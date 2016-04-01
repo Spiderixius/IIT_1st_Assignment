@@ -53,7 +53,7 @@ $router->addRoute('GET', '/upload', ['App\\Controller\\UploadController', 'uploa
 $router->addRoute('GET', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
 $router->addRoute('GET', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
 $router->addRoute('GET', '/adduser', ['App\\Controller\\AddUserController', 'showAddUserPage']);
-$router->addRoute('GET', '/updateUserList', ['App\\Controller\\UserListController', 'updateUserList']);
+$router->addRoute('GET', '/showUsers', ['App\\Controller\\UserListController', 'showUsers']);
 
 
 
