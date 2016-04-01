@@ -7,10 +7,10 @@ class LoginModel {
 	}
 
 	public  function validate(){
-		//$username = $_POST['username'];
+
 		$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 		$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-		//$password = $_POST['password'];
+
 
 		$password = hash('sha256', $password);
 
@@ -20,6 +20,7 @@ class LoginModel {
 		$result->setFetchMode(PDO::FETCH_ASSOC);
 
 		if ($username && $password) {
+
 			$row = $result->fetchColumn();
 			if($row != 0){
 				while ($info = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -28,9 +29,9 @@ class LoginModel {
 				} 
 			} else {
 				//require VIEW_DIR . '/pages/gallery.php';
-				die("Username not in the DB, talk with the owner to add you!");
+				die("Username not in the DB, talk with the owner to add you! <br><a href='/'> Go back to Login");
 			}
-			require VIEW_DIR . '/pages/gallery.php';
+			return true;
 			
 		}
 	}

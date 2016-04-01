@@ -9,7 +9,7 @@
 	<h1>Login</h1>
 </div>
 
-<form id="login_form" method="POST" action="/validate">
+<form id="login_form" method="POST" action="/login">
 	Username <br>	
 		<input type="text" name="username" id="loginName" placeholder="Insert Username" maxlength="100" />
 		<br>

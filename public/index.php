@@ -47,21 +47,22 @@ $container = new Container();
 **************/
 
 $router = new Router();
-$router->addRoute('GET', '/', ['App\\Controller\\LoginController', 'login']);
-$router->addRoute('GET', '/login', ['App\\Controller\\LoginController', 'login']);
+$router->addRoute('GET', '/', ['App\\Controller\\LoginController', 'showLoginPage']);
 $router->addRoute('GET', '/gallery', ['App\\Controller\\GalleryController', 'showGallery']);
 $router->addRoute('GET', '/upload', ['App\\Controller\\UploadController', 'uploadImage']);
 $router->addRoute('GET', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
 $router->addRoute('GET', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
-$router->addRoute('GET', '/adduser', ['App\\Controller\\AddUserController', 'addUser']);
+$router->addRoute('GET', '/adduser', ['App\\Controller\\AddUserController', 'showAddUserPage']);
 
-$router->addRoute('POST', '/login', ['App\\Controller\\LoginController', 'login']);
+
+$router->addRoute('POST', '/login', ['App\\Controller\\LoginController', 'Login']);
+$router->addRoute('POST', '/addUser', ['App\\Controller\\AddUserController', 'addUser']);
 $router->addRoute('POST', '/gallery', ['App\\Controller\\LoginController', 'showGallery']);
 $router->addRoute('POST', '/upload', ['App\\Controller\\UploadController', 'uploadImage']);
-$router->addRoute('POST', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
+//$router->addRoute('POST', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
 $router->addRoute('POST', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
-$router->addRoute('POST', '/adduser', ['App\\Controller\\AddUserController', 'addUser']);
-$router->addRoute('POST', '/validate', ['App\\Model\\LoginModel', 'validate']);
+//$router->addRoute('POST', '/adduser', ['App\\Controller\\AddUserController', 'addUser']);
+
 
 // Conversion of uri "/derp%40herp?id=1" to "/derp@herp" much prettier, yes?
 $uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));

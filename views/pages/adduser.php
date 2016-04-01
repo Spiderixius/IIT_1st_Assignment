@@ -8,12 +8,12 @@
   <li><a href="/">Home</a></li>
   <li><a href="contactform">Contact Me</a></li>
 </ul>
-<form method="POST" action="userList">
+<form method="POST" action="/addUser">
 	Username <br>
-		<input type="text" name="userID"/>
+		<input type="text" name="username" id="loginName" placeholder="Insert Username" maxlength="100" />
 		<br>
 	Password<br>
-	<input type="text" password="userID"/>
+	<input type="password" name="password" id="loginPassword" placeholder="Insert Password" autocomplete="off" maxlength="50" />
 	<br>
 		<input type="submit" value="Add User"/> 
 		<input type="reset" value="Cancel"/>

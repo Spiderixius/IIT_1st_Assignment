@@ -9,7 +9,7 @@
   <li><a href="/">Home</a></li>
   <li><a href="contactform">Contact Me</a></li>	
 </ul>
-<form method="GET" action="adduser">
+<form method="GET" action="/adduser">
 	<input type="submit" value="Add a user"/>
 </form>
 <br>
