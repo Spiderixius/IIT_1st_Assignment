@@ -60,6 +60,7 @@ $router->addRoute('GET', '/showUsers', ['App\\Controller\\UserListController', '
 
 $router->addRoute('POST', '/login', ['App\\Controller\\LoginController', 'Login']);
 $router->addRoute('POST', '/addUser', ['App\\Controller\\AddUserController', 'addUser']);
+$router->addRoute('POST', '/deleteUser', ['App\\Controller\\AddUserController', 'deleteUser']);
 $router->addRoute('POST', '/gallery', ['App\\Controller\\LoginController', 'showGallery']);
 $router->addRoute('POST', '/upload', ['App\\Controller\\UploadController', 'uploadImage']);
 //$router->addRoute('POST', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);

@@ -30,4 +30,16 @@ class AddUserController {
 		}
 	}
 
+	public function deleteUser(){
+		$info = $this->addUser->deleteUser();
+
+		if ($info) {
+			echo "User deleted";
+			echo "<br><a href='/userlist'> Go back to user list";
+		} else {
+			echo "User not delete";
+			echo "<br><a href='/userlist'> Go back to user list";
+		}
+	}
+
 }
