@@ -9,8 +9,8 @@ class AddUserModel {
 
 		try {
 
-			$username = filter_var(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-			$password = filter_var(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+			$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+			$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
 			$password = hash('sha256', $password);
 
