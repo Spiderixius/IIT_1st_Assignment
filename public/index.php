@@ -15,9 +15,10 @@ error_reporting(-1);
 ini_set('display_errors', 1);
 
 // Global constants
-define('VIEW_DIR', realpath(__DIR__ . '/../views'));
-define('CONTROLLER_DIR', realpath(__DIR__ . '/../App/Controller'));
-define('MODEL_DIR', realpath(__DIR__ . '/../App/Model'));
+define('VIEW_DIR',				realpath(__DIR__ . '/../views'));
+define('CONTROLLER_DIR', 		realpath(__DIR__ . '/../App/Controller'));
+define('MODEL_DIR',				realpath(__DIR__ . '/../App/Model'));
+define('IMAGE_DIR',				realpath(__DIR__ . '/../public/assets/img'));
 
 
 
@@ -47,25 +48,25 @@ $container = new Container();
 **************/
 
 $router = new Router();
-$router->addRoute('GET', '/', ['App\\Controller\\LoginController', 'showLoginPage']);
-$router->addRoute('GET', '/gallery', ['App\\Controller\\GalleryController', 'showGallery']);
-$router->addRoute('GET', '/upload', ['App\\Controller\\UploadController', 'uploadImage']);
-$router->addRoute('GET', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
-$router->addRoute('GET', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
-$router->addRoute('GET', '/adduser', ['App\\Controller\\AddUserController', 'showAddUserPage']);
-$router->addRoute('GET', '/showUsers', ['App\\Controller\\UserListController', 'showUsers']);
+$router->addRoute('GET', '/', 					['App\\Controller\\LoginController', 		'showLoginPage'		]);
+$router->addRoute('GET', '/gallery', 			['App\\Controller\\GalleryController', 		'showGallery'				]);
+$router->addRoute('GET', '/showUpload', 		['App\\Controller\\GalleryController', 		'showUploadImagePage'		]);
+$router->addRoute('GET', '/userlist', 			['App\\Controller\\UserListController', 	'showUsers'			]);
+$router->addRoute('GET', '/contactform', 		['App\\Controller\\ContactFormController', 	'contactMe'			]);
+$router->addRoute('GET', '/showAddUserPage',	['App\\Controller\\AddUserController', 		'showAddUserPage'	]);
+$router->addRoute('GET', '/showUsers', 			['App\\Controller\\UserListController', 	'showUsers'			]);
+$router->addRoute('GET', '/showEditUserPage', 	['App\\Controller\\AddUserController', 		'showEditUserPage'	]);
 
-
-
-
-$router->addRoute('POST', '/login', ['App\\Controller\\LoginController', 'Login']);
-$router->addRoute('POST', '/addUser', ['App\\Controller\\AddUserController', 'addUser']);
-$router->addRoute('POST', '/deleteUser', ['App\\Controller\\AddUserController', 'deleteUser']);
-$router->addRoute('POST', '/gallery', ['App\\Controller\\LoginController', 'showGallery']);
-$router->addRoute('POST', '/upload', ['App\\Controller\\UploadController', 'uploadImage']);
-//$router->addRoute('POST', '/userlist', ['App\\Controller\\UserListController', 'showUsers']);
-$router->addRoute('POST', '/contactform', ['App\\Controller\\ContactFormController', 'contactMe']);
-//$router->addRoute('POST', '/adduser', ['App\\Controller\\AddUserController', 'addUser']);
+$router->addRoute('POST', '/login', 			['App\\Controller\\LoginController', 		'login'				]);
+$router->addRoute('GET', '/logout', 			['App\\Controller\\LoginController', 		'logout'			]);
+$router->addRoute('POST', '/addUser', 			['App\\Controller\\AddUserController', 		'addUser'			]);
+$router->addRoute('POST', '/deleteUser', 		['App\\Controller\\AddUserController', 		'deleteUser'		]);
+$router->addRoute('POST', '/editUser', 			['App\\Controller\\AddUserController', 		'editUser'			]);
+//$router->addRoute('POST', '/gallery', 		['App\\Controller\\LoginController', 		'showGallery'		]);
+$router->addRoute('POST', '/upload', 			['App\\Controller\\GalleryController', 		'uploadImages'		]);
+//$router->addRoute('POST', '/userlist', 		['App\\Controller\\UserListController', 	'showUsers'			]);
+$router->addRoute('POST', '/contactform', 		['App\\Controller\\ContactFormController',	'contactMe'			]);
+//$router->addRoute('POST', '/adduser', 		['App\\Controller\\AddUserController', 		'addUser'			]);
 
 
 // Conversion of uri "/derp%40herp?id=1" to "/derp@herp" much prettier, yes?

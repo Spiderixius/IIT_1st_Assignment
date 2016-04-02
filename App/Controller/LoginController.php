@@ -18,7 +18,7 @@ private $loginModel;
 	}
 
 	public function login(){
-		
+		//session_start();
 		$info = $this->loginModel->validate();
 		
 		
@@ -31,7 +31,8 @@ private $loginModel;
 	}
 
 	public function logout(){
-		$_SESSION["loggedIn"] = false;
-		header ('Location: /login');
+		//$_SESSION["loggedIn"] = false;
+		session_destroy();
+		header ('Location: /');
 	}
 }

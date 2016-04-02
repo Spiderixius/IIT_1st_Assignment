@@ -17,6 +17,12 @@ class AddUserController {
 		require VIEW_DIR . '/pages/adduser.php';
 	}
 
+	public function showEditUserPage(){
+		$title = 'Edit User';
+
+		require VIEW_DIR . '/pages/editUser.php';
+	}
+
 	public  function addUser(){
 		
 		$info = $this->addUser->addUser();
@@ -38,6 +44,17 @@ class AddUserController {
 			echo "<br><a href='/userlist'> Go back to user list";
 		} else {
 			echo "User not delete";
+			echo "<br><a href='/userlist'> Go back to user list";
+		}
+	}
+
+	public function editUser(){
+		$info = $this->addUser->editUser();
+		if ($info) {
+			echo "User Edited";
+			echo "<br><a href='/userlist'> Go back to user list";
+		} else {
+			echo "User not edited";
 			echo "<br><a href='/userlist'> Go back to user list";
 		}
 	}

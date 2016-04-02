@@ -54,15 +54,18 @@ class AddUserModel {
 				<th></th>
 				<th></th>
 				</tr>";
-
+			// This will make it so admin is not displayed on the table
+			$row = $result->fetchColumn();
 			while($row = $result->fetch(PDO::FETCH_ASSOC)){
 	 			echo "<tr>";
 		        echo "<td>" . $row['id'] . "</td>";
 		        echo "<td>" . $row['username'] . "</td>";
 		        echo '<td> 
-		        		<form method="POST" action="/deleteUser">  
-	        				<input type="submit" value="EDIT" name="editUser"/> 
-    					</form></td>';
+		        		<form method="GET" action="/showEditUserPage"> 
+		        			<input type="hidden" name="id" value="' . $row['id'] . '"/>
+			        		<input type="hidden" name="username" value="' . $row['username'] . '"/>
+		        			<input type="submit" value="EDIT" name="showEditUserPage"/> 
+		        		</form></td>';
 		        echo '<td> 
 		        		<form method="POST" action="/deleteUser"> 
 			        		<input type="hidden" name="id" value="' . $row['id'] . '"/>
@@ -88,6 +91,32 @@ class AddUserModel {
 			$row = $result->fetchColumn();
 				if(!$row == 0){
 					$statement = $db->query('DELETE FROM users WHERE id="'.$id.'" ');
+					$db = null;
+					return true;
+				} else {
+					die("No data present.");
+				}	
+
+		} catch (PDOException $e) {
+			print "Error!: " . $e->getMessage() . "<br/>";
+			die();
+		}
+	}
+
+	// Function to update users
+	public function editUser(){
+
+
+		$username = $_POST["username"];
+		$id = $_POST["id"];
+		try {
+			require CONTROLLER_DIR . '/dbConnecterController.php';
+			$result = $db->query('SELECT * FROM users WHERE username="'.$username.'"');
+
+			$row = $result->fetchColumn();
+				if(!$row == 0){
+					// To be continued
+					$statement = $db->query("UPDATE users SET username ='$username' WHERE id = '$id'");
 					$db = null;
 					return true;
 				} else {

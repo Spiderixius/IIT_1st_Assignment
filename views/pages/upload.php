@@ -7,16 +7,19 @@
 <ul>
   <li><a href="gallery">Gallery</a></li>
   <li><a href="userlist">Users</a></li>
-  <li><a href="/">Home</a></li>
+  <li><a href="logout">Logout</a></li>
   <li><a href="contactform">Contact Me</a></li>
 </ul>
 <br>
-<form>
+
+<form method="POST" action="/upload" enctype="multipart/form-data">
 	<input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
-</form>
-	<form method="GET" action="gallery">
+	<br><br>
 	<input type="submit" value="Upload"/>
 </form>
+
+
+
 
 
 <?php require VIEW_DIR . '/footer.php'; ?>
