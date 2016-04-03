@@ -10,20 +10,15 @@
   <li><a href="/logout">Logout</a></li>
 </ul>
 <br>
-<hr>
-<h4>Cat</h4>
-<img src="/assets/img/cat.jpg">
-<br><br><br>
-<hr>
-<h4>Planet Earth</h4>
-<img src="/assets/img/earth.jpg">
-<br><br><br>
-<hr>
-<h4>Colours!</h4>
-<img src="/assets/img/balloon.jpg">
-<hr>
-<h4>Space</h4>
-<img src="/assets/img/space.jpg">
+
+<?php> 
+
+	foreach ($variable as $key => $value) {
+		# code...
+	}
+
+?>
+
 <br><br><br>
 
 

@@ -57,8 +57,8 @@ $router->addRoute('GET', '/showAddUserPage',	['App\\Controller\\AddUserControlle
 $router->addRoute('GET', '/showUsers', 			['App\\Controller\\UserListController', 	'showUsers'				]);
 $router->addRoute('GET', '/showEditUserPage', 	['App\\Controller\\AddUserController', 		'showEditUserPage'		]);
 $router->addRoute('GET', '/logout', 			['App\\Controller\\LoginController', 		'logout'				]);
-
 $router->addRoute('GET', '/login', 				['App\\Controller\\LoginController', 		'login'					]);
+
 $router->addRoute('POST', '/login', 			['App\\Controller\\LoginController', 		'login'					]);
 $router->addRoute('POST', '/addUser', 			['App\\Controller\\AddUserController', 		'addUser'				]);
 $router->addRoute('POST', '/deleteUser', 		['App\\Controller\\AddUserController', 		'deleteUser'			]);

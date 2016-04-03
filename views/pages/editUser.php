@@ -13,9 +13,6 @@
 		<label for="username">New Username</label>
         <input id="newusername" type="text" name="newusername" placeholder="Insert Username" maxlength="100" autofocus>
 		<br>
-	<!-- Password<br>
-	<input type="password" name="password" id="loginPassword" placeholder="Insert Password" autocomplete="off" maxlength="50" />
-	<br> -->
 		<input type="submit" value="Edit User"/> 
 		<input type="reset" value="Cancel"/>
 

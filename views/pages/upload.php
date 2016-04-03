@@ -12,10 +12,12 @@
 <br>
 
 <form method="POST" action="/upload" enctype="multipart/form-data">
-	<input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
+	<input type="file" name="filename" accept="image/gif, image/jpeg, image/png"><br>
+	<input type="text" name="title" id="title" placeholder="Insert Title" maxlength="100" />
 	<br><br>
 	<input type="submit" value="Upload"/>
 </form>
+
 
 
 
