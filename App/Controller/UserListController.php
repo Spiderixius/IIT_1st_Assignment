@@ -15,9 +15,13 @@ class UserListController {
 
 	public  function showUsers(){
 		$title = 'Users';
+		if (isset($_SESSION['username'])) {
+			require VIEW_DIR . '/pages/userlist.php';		
+			$this->updateUserList();
+		} else{
+			header ('Location: /');
+		}
 
-		require VIEW_DIR . '/pages/userlist.php';
-		$this->updateUserList();
 	}
 
 	public function updateUserList(){

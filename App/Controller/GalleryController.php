@@ -13,7 +13,12 @@ class GalleryController {
 	public  function showGallery(){
 		$title = 'Gallery';
 
-		require VIEW_DIR . '/pages/gallery.php';
+		if (isset($_SESSION['username'])) {
+			require VIEW_DIR . '/pages/gallery.php';
+		} else{
+			header ('Location: /');
+		}
+		
 	}
 
 	public function showUploadImagePage(){

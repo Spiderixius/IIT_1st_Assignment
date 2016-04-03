@@ -13,14 +13,21 @@ class AddUserController {
 
 	public function showAddUserPage(){
 		$title = 'Add User';
-
-		require VIEW_DIR . '/pages/adduser.php';
+		if (isset($_SESSION['username'])) {
+			require VIEW_DIR . '/pages/adduser.php';
+		} else{
+			header ('Location: /');
+		}
 	}
 
 	public function showEditUserPage(){
 		$title = 'Edit User';
 
-		require VIEW_DIR . '/pages/editUser.php';
+		if (isset($_SESSION['username'])) {
+			require VIEW_DIR . '/pages/editUser.php';
+		} else{
+			header ('Location: /');
+		}
 	}
 
 	public  function addUser(){
@@ -31,8 +38,7 @@ class AddUserController {
 			echo "User added";
 			echo "<br><a href='/userlist'> Go back to user list";
 		} else {
-			echo "Username taken";
-			echo "<br><a href='/userlist'> Go back to user list";
+			die();
 		}
 	}
 

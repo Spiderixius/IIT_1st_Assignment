@@ -2,6 +2,7 @@
 
 <h1>Gallery</h1>
 <br>
+<h3>Welcome <?php echo $_SESSION['username']?></h3>
 <ul>
   <li><a href="/gallery">Gallery</a></li>
   <li><a href="/userlist">Users</a></li>
