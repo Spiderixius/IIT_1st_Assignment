@@ -11,13 +11,31 @@
 </ul>
 <br>
 
-<?php> 
+<table id="images">
+<?php 
 
-	foreach ($variable as $key => $value) {
-		# code...
+	require CONTROLLER_DIR . '/dbConnecterController.php';
+
+    $statement = $db->prepare("SELECT * FROM images ");
+	// Execute the query
+	$statement->execute();	
+	
+	while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+		echo '<div class="imgrespons">';
+		echo '<div class="img">';
+		echo '<img src="data:image;base64,'.$row['img'].' " alt="'.$row['title'].'" width="150" height="150">';
+
+		echo '<label>Title: </label> '. $row['title'].' <br>';
+	
+		echo '<form action="delete_image" method="post">';
+			echo '<input type="hidden" name="id" value="'. $row['id'] .'"/>';
+			echo '<button type="submit">Delete Image</button>';
+		echo '</form>';
+		
+		echo '</div></div>';
 	}
-
 ?>
+</table>
 
 <br><br><br>
 

@@ -2,6 +2,7 @@
 namespace App\Controller;
 require MODEL_DIR . '/UploadImageModel.php';
 
+
 class GalleryController {
 
 	private $galleryVar;
@@ -31,8 +32,8 @@ class GalleryController {
 		}
 	}
 
-	public function showUpload(){
-
+	public function deleteImage(){
+		$this->galleryVar->deleteImage();
 	}
 
 	public function uploadImages(){

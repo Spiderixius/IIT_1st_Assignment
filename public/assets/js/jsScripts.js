@@ -4,7 +4,7 @@ function validateUser(){
 
 	var name = document.getElementById("loginName").value;
 	var pass = document.getElementById("loginPassword").value;
-
+	
 	var xhrequest =  new XMLHttpRequest();
 	xhrequest.open("POST", "/login", true);
 	xhrequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

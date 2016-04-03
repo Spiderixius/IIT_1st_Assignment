@@ -64,6 +64,7 @@ $router->addRoute('POST', '/addUser', 			['App\\Controller\\AddUserController', 
 $router->addRoute('POST', '/deleteUser', 		['App\\Controller\\AddUserController', 		'deleteUser'			]);
 $router->addRoute('POST', '/editUser', 			['App\\Controller\\AddUserController', 		'editUser'				]);
 $router->addRoute('POST', '/upload', 			['App\\Controller\\GalleryController', 		'uploadImages'			]);
+$router->AddRoute('POST', '/delete_image', 		['App\\Controller\\GalleryController', 		'deleteImage'			]);
 
 
 
