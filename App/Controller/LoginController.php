@@ -22,6 +22,7 @@ private $loginModel;
 		$data = json_decode($input, true);
 		
 		$username = $data["username"];
+		$username = filter_var($username, FILTER_SANITIZE_STRING);
 		$password = $data["password"];
 		$password = hash('sha256', $password);
 
@@ -31,7 +32,6 @@ private $loginModel;
 			echo json_encode(array('value' => true));
 		} else {
 			echo json_encode(array('value' => false));
-			//die("404: No such page. <br><a href='/'> Go back to Login");
 		}
 		
 	}
