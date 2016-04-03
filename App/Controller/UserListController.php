@@ -21,7 +21,6 @@ class UserListController {
 		} else{
 			header ('Location: /');
 		}
-
 	}
 
 	public function updateUserList(){

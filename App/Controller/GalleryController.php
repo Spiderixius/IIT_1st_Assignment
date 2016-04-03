@@ -24,7 +24,11 @@ class GalleryController {
 	public function showUploadImagePage(){
 		$title = 'Upload';
 
-		require VIEW_DIR . '/pages/upload.php';
+		if (isset($_SESSION['username'])) {
+			require VIEW_DIR . '/pages/upload.php';
+		} else{
+			header ('Location: /');
+		}
 	}
 
 	public function showUpload(){
@@ -34,10 +38,9 @@ class GalleryController {
 	public function uploadImages(){
 		$info = $this->galleryVar->uploadImage();
 		if ($info) {
-			echo "Image added";
-			echo "<br><a href='/gallery'> Go back to user list";
+			header ('Location: /gallery');
 		} else {
-			die();
+			die("Failed to add image!");
 		}
 	}
 }

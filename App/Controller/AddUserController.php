@@ -35,10 +35,12 @@ class AddUserController {
 		$info = $this->addUser->addUser();
 
 		if ($info) {
+			header ('Location: /userlist');
 			echo "User added";
 			echo "<br><a href='/userlist'> Go back to user list";
 		} else {
-			die();
+			echo "User not added";
+			echo "<br><a href='/userlist'> Go back to user list";
 		}
 	}
 
@@ -46,10 +48,9 @@ class AddUserController {
 		$info = $this->addUser->deleteUser();
 
 		if ($info) {
-			echo "User deleted";
-			echo "<br><a href='/userlist'> Go back to user list";
+			header ('Location: /userlist');
 		} else {
-			echo "User not delete";
+			echo "User not deleted";
 			echo "<br><a href='/userlist'> Go back to user list";
 		}
 	}
@@ -57,8 +58,7 @@ class AddUserController {
 	public function editUser(){
 		$info = $this->addUser->editUser();
 		if ($info) {
-			echo "User Edited";
-			echo "<br><a href='/userlist'> Go back to user list";
+			header ('Location: /userlist');
 		} else {
 			echo "User not edited";
 			echo "<br><a href='/userlist'> Go back to user list";
