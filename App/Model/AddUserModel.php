@@ -10,7 +10,7 @@ class AddUserModel {
 		try {
 
 			$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-			$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+			$password = ('password');
 
 			$password = hash('sha256', $password);
 
@@ -106,17 +106,19 @@ class AddUserModel {
 	// Function to update users
 	public function editUser(){
 
-
-		$username = $_POST["username"];
+		$username = filter_input(INPUT_POST, 'newusername', FILTER_SANITIZE_STRING);
+		//$username = $_POST["username"];
 		$id = $_POST["id"];
 		try {
 			require CONTROLLER_DIR . '/dbConnecterController.php';
-			$result = $db->query('SELECT * FROM users WHERE username="'.$username.'"');
+			$result = $db->query('SELECT * FROM users WHERE id="'.$id.'"');
 
 			$row = $result->fetchColumn();
 				if(!$row == 0){
-					// To be continued
-					$statement = $db->query("UPDATE users SET username ='$username' WHERE id = '$id'");
+					$statement = $db->prepare("UPDATE users SET username=:username WHERE id=:id");
+					$statement->bindParam(':username', $username, PDO::PARAM_STR);
+					$statement->bindParam(':id', $id, PDO::PARAM_INT);
+					$statement->execute();
 					$db = null;
 					return true;
 				} else {
