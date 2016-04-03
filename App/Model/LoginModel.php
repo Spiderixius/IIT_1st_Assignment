@@ -3,15 +3,15 @@ namespace App\Model;
 use PDO;
 
 class LoginModel {
-	public  function validate(){
+	public  function validate($username, $password){
 
 
 		try{
 
-			$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-			$password = $_POST['password'];
+			//$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+			//$password = $_POST['password'];
 
-			$password = hash('sha256', $password);
+			//$password = hash('sha256', $password);
 
 			require CONTROLLER_DIR . '/dbConnecterController.php';
 			$result = $db->query('SELECT * FROM users WHERE username="'.$username.'" AND password ="'.$password.'";');
@@ -25,16 +25,11 @@ class LoginModel {
 					$_SESSION['username'] = $usernameDb;
 				} 
 				if ($usernameDb != null) {
+
 					return true;				
 				} else {
 					return false;
 				}
-				//return true;
-			//}else {
-					
-			//	die("Username not in the DB, talk with the owner to add you! <br><a href='/'> Go back to Login");
-			//}
-			
 
 		} catch (PDOException $e) {
 			print "Error!: " . $e->getMessage() . "<br/>";

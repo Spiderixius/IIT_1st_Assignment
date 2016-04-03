@@ -18,14 +18,20 @@ private $loginModel;
 	}
 
 	public function login(){
-		//session_start();
-		$info = $this->loginModel->validate();
+		$input = file_get_contents('php://input');
+		$data = json_decode($input, true);
 		
+		$username = $data["username"];
+		$password = $data["password"];
+		$password = hash('sha256', $password);
+
+		$info = $this->loginModel->validate($username, $password);
 		
 		if ($info) {
-			require VIEW_DIR . '/pages/gallery.php';
+			echo json_encode(array('value' => true));
 		} else {
-			die("404: No such page. <br><a href='/'> Go back to Login");
+			echo json_encode(array('value' => false));
+			//die("404: No such page. <br><a href='/'> Go back to Login");
 		}
 		
 	}

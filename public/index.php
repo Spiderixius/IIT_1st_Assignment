@@ -56,17 +56,15 @@ $router->addRoute('GET', '/contactform', 		['App\\Controller\\ContactFormControl
 $router->addRoute('GET', '/showAddUserPage',	['App\\Controller\\AddUserController', 		'showAddUserPage'		]);
 $router->addRoute('GET', '/showUsers', 			['App\\Controller\\UserListController', 	'showUsers'				]);
 $router->addRoute('GET', '/showEditUserPage', 	['App\\Controller\\AddUserController', 		'showEditUserPage'		]);
+$router->addRoute('GET', '/logout', 			['App\\Controller\\LoginController', 		'logout'				]);
 
-$router->addRoute('POST', '/login', 			['App\\Controller\\LoginController', 		'login'				]);
-$router->addRoute('GET', '/logout', 			['App\\Controller\\LoginController', 		'logout'			]);
-$router->addRoute('POST', '/addUser', 			['App\\Controller\\AddUserController', 		'addUser'			]);
-$router->addRoute('POST', '/deleteUser', 		['App\\Controller\\AddUserController', 		'deleteUser'		]);
-$router->addRoute('POST', '/editUser', 			['App\\Controller\\AddUserController', 		'editUser'			]);
-//$router->addRoute('POST', '/gallery', 		['App\\Controller\\LoginController', 		'showGallery'		]);
-$router->addRoute('POST', '/upload', 			['App\\Controller\\GalleryController', 		'uploadImages'		]);
-//$router->addRoute('POST', '/userlist', 		['App\\Controller\\UserListController', 	'showUsers'			]);
-$router->addRoute('POST', '/contactform', 		['App\\Controller\\ContactFormController',	'contactMe'			]);
-//$router->addRoute('POST', '/adduser', 		['App\\Controller\\AddUserController', 		'addUser'			]);
+$router->addRoute('GET', '/login', 				['App\\Controller\\LoginController', 		'login'					]);
+$router->addRoute('POST', '/login', 			['App\\Controller\\LoginController', 		'login'					]);
+$router->addRoute('POST', '/addUser', 			['App\\Controller\\AddUserController', 		'addUser'				]);
+$router->addRoute('POST', '/deleteUser', 		['App\\Controller\\AddUserController', 		'deleteUser'			]);
+$router->addRoute('POST', '/editUser', 			['App\\Controller\\AddUserController', 		'editUser'				]);
+$router->addRoute('POST', '/upload', 			['App\\Controller\\GalleryController', 		'uploadImages'			]);
+
 
 
 // Conversion of uri "/derp%40herp?id=1" to "/derp@herp" much prettier, yes?

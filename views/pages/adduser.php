@@ -6,7 +6,6 @@
   <li><a href="gallery">Gallery</a></li>
   <li><a href="userlist">Users</a></li>
   <li><a href="logout">Logout</a></li>
-  <li><a href="contactform">Contact Me</a></li>
 </ul>
 <form method="POST" action="/addUser">
 	Username <br>

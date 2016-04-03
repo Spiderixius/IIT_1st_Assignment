@@ -8,7 +8,6 @@
   <li><a href="/userlist">Users</a></li>
   <li><a href="/showUpload">Upload Image</a></li>  
   <li><a href="/logout">Logout</a></li>
-  <li><a href="/contactform">Contact Me</a></li>
 </ul>
 <br>
 <hr>
