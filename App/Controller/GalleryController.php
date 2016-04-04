@@ -41,7 +41,8 @@ class GalleryController {
 		if ($info) {
 			header ('Location: /gallery');
 		} else {
-			die("Failed to add image!");
+			echo "Image cannot be added";
+			echo "<br><a href='/showUpload'> Go back to upload page to try again.";
 		}
 	}
 }

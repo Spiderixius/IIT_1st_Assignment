@@ -32,8 +32,7 @@ private $loginModel;
 			echo json_encode(array('value' => true));
 		} else {
 			echo json_encode(array('value' => false));
-		}
-		
+		}	
 	}
 
 	public function logout(){

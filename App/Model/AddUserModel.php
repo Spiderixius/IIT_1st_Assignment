@@ -107,7 +107,6 @@ class AddUserModel {
 	public function editUser(){
 
 		$username = filter_input(INPUT_POST, 'newusername', FILTER_SANITIZE_STRING);
-		//$username = $_POST["username"];
 		$id = $_POST["id"];
 		try {
 			require CONTROLLER_DIR . '/dbConnecterController.php';

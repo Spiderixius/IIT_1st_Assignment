@@ -36,8 +36,6 @@ class AddUserController {
 
 		if ($info) {
 			header ('Location: /userlist');
-			echo "User added";
-			echo "<br><a href='/userlist'> Go back to user list";
 		} else {
 			echo "User not added";
 			echo "<br><a href='/userlist'> Go back to user list";

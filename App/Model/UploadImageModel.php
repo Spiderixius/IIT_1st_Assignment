@@ -8,7 +8,7 @@ class UploadImageModel {
 	public function uploadImage(){
 		if (isset($_FILES['filename'], $_POST['title'])) {
 	        if ($_FILES['filename'] != null && $_POST['title'] != null) {
-		        $image= addslashes($_FILES['filename']['tmp_name']); // Prevents SQL Injection.
+		        $image= addslashes($_FILES['filename']['tmp_name']);
 				$name= addslashes($_FILES['filename']['name']);
 				$image= file_get_contents($image);
 				$image= base64_encode($image);	
@@ -17,7 +17,7 @@ class UploadImageModel {
 				try {
 					require CONTROLLER_DIR . '/dbConnecterController.php';
 			
-					$query = "INSERT INTO images (title, img) VALUES (?,?)";
+					$query = 'INSERT INTO images (title, img) VALUES (?,?)';
 					$parameters = array($title, $image);
 					$statement = $db->prepare($query);
 					$statement->execute($parameters);

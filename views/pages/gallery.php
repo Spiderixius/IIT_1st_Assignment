@@ -23,13 +23,15 @@
 	while($row = $statement->fetch(PDO::FETCH_ASSOC)){
 		echo '<div class="imgrespons">';
 		echo '<div class="img">';
-		echo '<img src="data:image;base64,'.$row['img'].' " alt="'.$row['title'].'" width="150" height="150">';
+		echo '<h4>Title: </label> '. $row['title'].' </h4>';
 
-		echo '<label>Title: </label> '. $row['title'].' <br>';
+		echo '<img src="data:image;base64,'.$row['img'].' " alt="'.$row['title'].'" width="150" height="150"><br>';
+		
 	
 		echo '<form action="delete_image" method="post">';
 			echo '<input type="hidden" name="id" value="'. $row['id'] .'"/>';
-			echo '<button type="submit">Delete Image</button>';
+			echo '<button type="submit">Delete Image</button><br><br>';
+			echo '________________________________________________________________<br><br>';
 		echo '</form>';
 		
 		echo '</div></div>';

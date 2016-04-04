@@ -49,15 +49,14 @@ $container = new Container();
 
 $router = new Router();
 $router->addRoute('GET', '/', 					['App\\Controller\\LoginController', 		'showLoginPage'			]);
+$router->addRoute('GET', '/login', 				['App\\Controller\\LoginController', 		'login'					]);
+$router->addRoute('GET', '/logout', 			['App\\Controller\\LoginController', 		'logout'				]);
 $router->addRoute('GET', '/gallery', 			['App\\Controller\\GalleryController', 		'showGallery'			]);
 $router->addRoute('GET', '/showUpload', 		['App\\Controller\\GalleryController', 		'showUploadImagePage'	]);
 $router->addRoute('GET', '/userlist', 			['App\\Controller\\UserListController', 	'showUsers'				]);
-$router->addRoute('GET', '/contactform', 		['App\\Controller\\ContactFormController', 	'contactMe'				]);
-$router->addRoute('GET', '/showAddUserPage',	['App\\Controller\\AddUserController', 		'showAddUserPage'		]);
 $router->addRoute('GET', '/showUsers', 			['App\\Controller\\UserListController', 	'showUsers'				]);
+$router->addRoute('GET', '/showAddUserPage',	['App\\Controller\\AddUserController', 		'showAddUserPage'		]);
 $router->addRoute('GET', '/showEditUserPage', 	['App\\Controller\\AddUserController', 		'showEditUserPage'		]);
-$router->addRoute('GET', '/logout', 			['App\\Controller\\LoginController', 		'logout'				]);
-$router->addRoute('GET', '/login', 				['App\\Controller\\LoginController', 		'login'					]);
 
 $router->addRoute('POST', '/login', 			['App\\Controller\\LoginController', 		'login'					]);
 $router->addRoute('POST', '/addUser', 			['App\\Controller\\AddUserController', 		'addUser'				]);
