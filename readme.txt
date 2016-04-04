@@ -19,6 +19,8 @@ Hello reader. This readme file is seperated into three sections:
 Sections are divided by a title covered in forwardslashes. 
 This readme file was written in sublime 2. 
 
+Source code can also be found on  https://github.com/Spiderixius/IIT_1st_Assignment
+
 //////////////////////////////////
 //		Project Description		//
 //////////////////////////////////
